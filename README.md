@@ -37,7 +37,7 @@ InterSTELLAR
 ## Customize environment for InterSTELLAR
 ### Our InterSTELLAR environment
 - Windows 10 64bit
-- Python 3.6
+- Python 3.7
 - PyTorch 1.10.2
 - PyTorch-Geometric 2.0.4
 - NVIDIA GPU + CUDA
@@ -46,12 +46,12 @@ InterSTELLAR
 ### Installation
 - Create a virtual environment and install PyTorch and PyTorch_Geometric (we run all the codes in a Anaconda Powershell Prompt).
 ```
-$ conda create -n 'InterSTELLAR' python=3.6
+$ conda create -n 'InterSTELLAR' python=3.7
 $ conda activate InterSTELLAR (some systems recommend: source activate IMC_Denoise)
-$ conda install -c anaconda brotlipy
-$ pip install torch==1.10.2 torch-geometric==2.0.4
-$ conda install -c anaconda cudnn=7.6.5 cudatoolkit=10.1.243
+$ pip install torch==1.10.2
+$ conda install pyg -c pyg
 ```
+- Download and install the topk package from https://github.com/oval-group/smooth-topk
 - Download the source code and install the package in your folder.
 ```
 $ git clone https://github.com/PENGLU-WashU/InterSTELLAR.git
@@ -65,20 +65,20 @@ $ pip install -e .
 - Previously trained weights can be accessed in this repository.
 ### Implement InterSTELLAR with scripts
 - Activate the InterSTELLAR environment.
-```
-$ conda activate InterSTELLAR
-```
+  ```
+  $ conda activate InterSTELLAR
+  ```
 - Graph construction from raw data.
   ```
-  python Demo/Graph_Construction_Demo.py --dataset 'graph_data.npy' --neighbour_thresh '40' --myeps '1e-4'  --built_graph_data 'constructed_graph_data.npy' 
+  $ python Demo/Graph_Construction_Demo.py --dataset 'graph_data.npy' --neighbour_thresh '40' --myeps '1e-4'  --built_graph_data 'constructed_graph_data.npy' 
   ```
 - InterSTELLAR training with the demo data.
   ```
-  python Demo/InterSTELLAR_Train_Demo.py --dataset 'constructed_graph_data.npy' --fold_order '5' --k_sample_val '8' --epoch_num '30' --lr '3e-4' --eta '0.85' --n_classes '3' --out_channels '10' --batch_size '8' --lambda_reg '3e-5' --results_dir 'saved_model_interstellar5.pt' --GPU 'True'
+  $ python Demo/InterSTELLAR_Train_Demo.py --dataset 'constructed_graph_data.npy' --fold_order '5' --k_sample_val '8' --epoch_num '30' --lr '3e-4' --eta '0.85' --n_classes '3' --out_channels '10' --batch_size '8' --lambda_reg '3e-5' --results_dir 'saved_model_interstellar5.pt' --GPU 'True'
   ```
 - InterSTELLAR prediction with the test dataset from the demo data.
   ```
-  python Demo/InterSTELLAR_Predict_Demo.py --trained_weights 'saved_model_interstellar5.pt' --dataset 'constructed_graph_data.npy' --n_classes '3' --out_channels '10' --GPU 'True' --save_results 'True'
+  $ python Demo/InterSTELLAR_Predict_Demo.py --trained_weights 'saved_model_interstellar5.pt' --dataset 'constructed_graph_data.npy' --n_classes '3' --out_channels '10' --GPU 'True' --save_results 'True'
   ```   
 
 ## Contact
