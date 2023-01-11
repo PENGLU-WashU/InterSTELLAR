@@ -1,8 +1,3 @@
-![GitHub repo size](https://img.shields.io/github/repo-size/PENGLU-WashU/InterSTELLAR)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/PENGLU-WashU/InterSTELLAR)
-![Python version](https://img.shields.io/badge/python-v3.6-blue)
-![Suggestions](https://img.shields.io/badge/suggestions-welcome-green)
-
 # Interpretable spatial cell learning enhances the characterization of patient tissue microenvironments with highly multiplexed imaging data
 
 <img src="image/github.png" alt="Logo" width="600" align = "right">
