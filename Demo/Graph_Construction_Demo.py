@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import argparse
-from Graph_Construction_Fuctions import prepare_graphs
+from InterSTELLAR.Graph_Construction_Fuctions import prepare_graphs
 import numpy as np
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)

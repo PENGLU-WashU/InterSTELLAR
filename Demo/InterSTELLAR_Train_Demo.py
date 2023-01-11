@@ -2,8 +2,8 @@
 import numpy as np
 import torch
 import argparse
-from Graph_Construction_Fuctions import prepare_constructed_graphs
-from InterSTELLAR_Train import train
+from InterSTELLAR.Graph_Construction_Fuctions import prepare_constructed_graphs
+from InterSTELLAR.InterSTELLAR_Train import train
 
 def str2bool(v):
     if isinstance(v, bool):

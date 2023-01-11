@@ -3,8 +3,8 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader
 import argparse
-from Graph_Construction_Fuctions import prepare_constructed_graphs
-from InterSTELLAR_Network import InterSTELLAR
+from InterSTELLAR.Graph_Construction_Fuctions import prepare_constructed_graphs
+from InterSTELLAR.InterSTELLAR_Network import InterSTELLAR
 from sklearn.metrics import confusion_matrix, f1_score
 import scipy.io as sio
 
