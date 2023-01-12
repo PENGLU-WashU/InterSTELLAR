@@ -19,8 +19,6 @@ parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFo
 
 parser.add_argument("--dataset", help = "dataset used to build graphs. npy format, along with its folder",
                     default = 'constructed_graph_data.npy', type = str)
-parser.add_argument("--myeps", help = "the value used in log transform of the cell data", 
-                    default = 1e-4, type = float)
 parser.add_argument("--fold_order", help = "10-fold cross validation, specify the fold order, from 1 to 10", 
                     default = 5, type = int)
 parser.add_argument("--k_sample_val", help = "k top highest and lowest samples in cell-scale training", 
