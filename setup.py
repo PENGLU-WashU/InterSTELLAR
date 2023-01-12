@@ -9,8 +9,8 @@ setup(name='InterSTELLAR',
           "scipy",
           "matplotlib",
           "scikit-learn",
-          "torch==1.10.2",
-          "torch_geometric==2.0.4",
+          "torch",
+          "torch_geometric",
           ""
         ]
       )
