@@ -112,5 +112,8 @@ print('F1 score: ' + str(f1_score(all_labels, all_predictions, average = 'macro'
 4. Save results
 """
 if args.save_results:
-    mdict = {"true_label": all_labels, "predicted_label": all_predictions, "predicted_attention_maps": all_attention_maps}
-    sio.savemat(r'validation_prediction_results', mdict)
+    mdict = {"true_label": all_labels, "predicted_label": all_predictions}
+    sio.savemat(r'true_predicted_labels.mat', mdict)
+    mdict = {"predicted_attention_map" + str(ii): all_attention_maps[ii] for ii in range(len(all_attention_maps))}
+    sio.savemat(r'predicted_attention_maps.mat', mdict)
+    
