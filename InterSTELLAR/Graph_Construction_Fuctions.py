@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import torch
-from torch_geometric.data import Data
 from scipy.spatial.distance import squareform, pdist
 from scipy.sparse import coo_matrix
 
@@ -48,10 +47,11 @@ def prepare_constructed_graphs(raw_graph_data):
         cur_edge_index = raw_graph_data[m][1]
         cur_edge_attr = raw_graph_data[m][2]
         cur_labels = raw_graph_data[m][3]
-        edge_index = torch.tensor(cur_edge_index, dtype=torch.long)
-        edge_attr = torch.tensor(cur_edge_attr, dtype=torch.float)
-        single_graph = Data(x = torch.tensor(cur_features, dtype = torch.float), edge_index = edge_index.contiguous(), 
-                          edge_attr = edge_attr, y = cur_labels.astype(np.int64))
+        
+        single_graph.append(torch.tensor(cur_features, dtype = torch.float))
+        single_graph.append(torch.tensor(cur_edge_index, dtype=torch.long).contiguous())
+        single_graph.append(torch.tensor(cur_edge_attr, dtype=torch.float))
+        single_graph.append(cur_labels.astype(np.int64))
         
         all_graphs.append(single_graph)   
     print('Graph construction completed!')

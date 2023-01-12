@@ -4,8 +4,8 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, WeightedRandomSampler
 import torch.optim as optim
-from InterSTELLAR_Utility import train_InterSTELLAR, validate_InterSTELLAR
-from InterSTELLAR_Network import InterSTELLAR
+from .InterSTELLAR_Utility import train_InterSTELLAR, validate_InterSTELLAR
+from .InterSTELLAR_Network import InterSTELLAR
 
 """Train InterSTELLAR"""
 def train(datasets, in_channels, out_channels, epoch_num = 200, n_classes = 3, learning_rate = 1e-3, k_sample_val = 8, 
@@ -61,7 +61,6 @@ def train(datasets, in_channels, out_channels, epoch_num = 200, n_classes = 3, l
     custom_sampler = WeightedRandomSampler(weights = get_sample_frequency(), 
                                            num_samples = int(1.3*len(train_split)), replacement = True)
     train_loader =  DataLoader(train_split, batch_size=1, sampler=custom_sampler)
-#     train_loader = CustomInput(train_split, n_classes)
     val_loader = DataLoader(val_split, batch_size=1, shuffle=False)
     print('Done!')
     
