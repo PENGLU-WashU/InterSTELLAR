@@ -51,11 +51,11 @@ all_graph_tnbc = []
 all_graph_non_tnbc = []
 
 for kk in range(len(all_graphs)):
-    if int(all_graphs[kk].y) == 0:
+    if int(all_graphs[kk][3]) == 0:
         all_graph_healthy.append(all_graphs[kk])   
-    if int(all_graphs[kk].y) == 1:
+    if int(all_graphs[kk][3]) == 1:
         all_graph_tnbc.append(all_graphs[kk])
-    if int(all_graphs[kk].y) == 2:
+    if int(all_graphs[kk][3]) == 2:
         all_graph_non_tnbc.append(all_graphs[kk])
 del all_graphs
         
@@ -67,16 +67,13 @@ test_list_non_tnbc = list(range(19,19+47*step,step))
 test_holder = []
 for ii in range(len(test_list_healthy)):
     cur_idx = test_list_healthy[ii]
-    test_holder.append([all_graph_healthy[cur_idx].x, all_graph_healthy[cur_idx].edge_index, 
-                     all_graph_healthy[cur_idx].edge_attr, int(all_graph_healthy[cur_idx].y)])
+    test_holder.append(all_graph_healthy[cur_idx])
 for ii in range(len(test_list_tnbc)):
     cur_idx = test_list_tnbc[ii]
-    test_holder.append([all_graph_tnbc[cur_idx].x, all_graph_tnbc[cur_idx].edge_index, 
-                     all_graph_tnbc[cur_idx].edge_attr, int(all_graph_tnbc[cur_idx].y)])
+    test_holder.append(all_graph_tnbc[cur_idx])
 for ii in range(len(test_list_non_tnbc)):
     cur_idx = test_list_non_tnbc[ii]
-    test_holder.append([all_graph_non_tnbc[cur_idx].x, all_graph_non_tnbc[cur_idx].edge_index, 
-                     all_graph_non_tnbc[cur_idx].edge_attr, int(all_graph_non_tnbc[cur_idx].y)])
+    test_holder.append(all_graph_non_tnbc[cur_idx])
 del all_graph_healthy, all_graph_tnbc, all_graph_non_tnbc
 loader = DataLoader(test_holder, batch_size=1, shuffle=False)
 """

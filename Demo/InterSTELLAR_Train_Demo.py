@@ -73,13 +73,13 @@ all_graph_non_tnbc = []
 datasets = []
 
 for kk in range(len(all_graphs)):
-    if int(all_graphs[kk].y) == 0:
+    if int(all_graphs[kk][3]) == 0:
         healthy_list.append(kk)
         all_graph_healthy.append(all_graphs[kk])   
-    if int(all_graphs[kk].y) == 1:
+    if int(all_graphs[kk][3]) == 1:
         tnbc_list.append(kk)
         all_graph_tnbc.append(all_graphs[kk])
-    if int(all_graphs[kk].y) == 2:
+    if int(all_graphs[kk][3]) == 2:
         non_tnbc_list.append(kk)
         all_graph_non_tnbc.append(all_graphs[kk])
 del all_graphs
@@ -112,25 +112,19 @@ for kk in range(10):
     
     train_holder = []
     for ii in train_range_healthy:
-        train_holder.append([all_graph_healthy[ii].x, all_graph_healthy[ii].edge_index, 
-                     all_graph_healthy[ii].edge_attr, int(all_graph_healthy[ii].y)])
+        train_holder.append(all_graph_healthy[ii])
     for ii in train_range_tnbc:
-        train_holder.append([all_graph_tnbc[ii].x, all_graph_tnbc[ii].edge_index, 
-                     all_graph_tnbc[ii].edge_attr, int(all_graph_tnbc[ii].y)])
+        train_holder.append(all_graph_tnbc[ii])
     for ii in train_range_non_tnbc:
-        train_holder.append([all_graph_non_tnbc[ii].x, all_graph_non_tnbc[ii].edge_index, 
-                     all_graph_non_tnbc[ii].edge_attr, int(all_graph_non_tnbc[ii].y)])
+        train_holder.append(all_graph_non_tnbc[ii])
         
     val_holder = []
     for ii in val_range_healthy:
-        val_holder.append([all_graph_healthy[ii].x, all_graph_healthy[ii].edge_index, 
-                     all_graph_healthy[ii].edge_attr, int(all_graph_healthy[ii].y)])
+        val_holder.append(all_graph_healthy[ii])
     for ii in val_range_tnbc:
-        val_holder.append([all_graph_tnbc[ii].x, all_graph_tnbc[ii].edge_index, 
-                     all_graph_tnbc[ii].edge_attr, int(all_graph_tnbc[ii].y)])
+        val_holder.append(all_graph_tnbc[ii])
     for ii in val_range_non_tnbc:
-        val_holder.append([all_graph_non_tnbc[ii].x, all_graph_non_tnbc[ii].edge_index, 
-                     all_graph_non_tnbc[ii].edge_attr, int(all_graph_non_tnbc[ii].y)])
+        val_holder.append(all_graph_non_tnbc[ii])
         
     datasets.append((train_holder, val_holder))
 
