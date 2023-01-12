@@ -61,7 +61,7 @@ $ pip install -e .
 
 ## Implement InterSTELLAR
 ### Download example data
-- Please go to https://doi.org/10.5281/zenodo.7527692 and download **graph_data.npy**. 
+- Please go to https://doi.org/10.5281/zenodo.7527814 and download **graph_data.npy**. 
 - Previously trained weights can be accessed in this repository.
 ### Hyper-parameters used in this package
 | Parameter          | Description                                                                                                                                                                                                                       | Default Value | Data type |
