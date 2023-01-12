@@ -48,7 +48,7 @@ InterSTELLAR
 ```
 $ conda create -n 'InterSTELLAR' python=3.7
 $ conda activate InterSTELLAR (some systems recommend: source activate IMC_Denoise)
-$ pip install torch==1.10.2
+$ conda install PyTorch -c PyTorch
 ```
 - Install the PyTorch-Geometric package from https://github.com/pyg-team/pytorch_geometric#installation
 - Download and install the topk package from https://github.com/oval-group/smooth-topk
