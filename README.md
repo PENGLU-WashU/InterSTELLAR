@@ -49,8 +49,8 @@ InterSTELLAR
 $ conda create -n 'InterSTELLAR' python=3.7
 $ conda activate InterSTELLAR (some systems recommend: source activate IMC_Denoise)
 $ pip install torch==1.10.2
-$ conda install pyg -c pyg
 ```
+- Install the PyTorch-Geometric package from https://github.com/pyg-team/pytorch_geometric#installation
 - Download and install the topk package from https://github.com/oval-group/smooth-topk
 - Download the source code and install the package in your folder.
 ```
@@ -63,6 +63,27 @@ $ pip install -e .
 ### Download example data
 - Please go to https://doi.org/10.5281/zenodo.7516958 and download **graph_data.npy**. 
 - Previously trained weights can be accessed in this repository.
+### Hyper-parameters used in this package
+| Parameter          | Description                                                                                                                                                                                                                       | Default Value | Data type |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-----------|
+| dataset       | The dataset used to build graphs from raw data. npy format, along with its folder.                                                                                                                                                | graph_data.npy             | str       |
+| neighbour_thresh             | The thresh value used to determine if any two cells are neighbours.       | 40             | int       |
+| myeps  | The value used in log transform of the cell data.         | 1e-4             | float       |
+| built_graph_data       | The built graphs from raw data. npy format, along with its folder. | constructed_graph_data.npy           | str     |
+| fold_order      | 10-fold cross validation, specify the fold order, from 1 to 10.                    | 5           | int       |
+| k_sample_val   | k top highest and lowest samples in cell-scale training.   | 8           | int       |
+| epoch_num          | The epoch number  | 30          | int     |
+| lr   | Initial training rate.             | 3e-4          | float     |
+| eta | The eta value in the loss function, between 0 and 1    | 0.85       | float     |
+| n_classes    | The number of tissue classes | 3          | int     |
+| out_channels    | The output channel number | 10          | int     |
+| batch_size    | The batch size | 8          | int     |
+| lambda_reg    | l1 regularization parameter for network weights | 3e-5         | float     |
+| results_dir    | The folder to save the trained weights | None          | str     |
+| GPU    | Apply GPU for training | True         | bool     |
+| trained_weights    | Load a trained weights file to model | N/A          | str     |
+| save_results    | Save the predicted tissue and cell-scale results | False         | bool     |
+
 ### Implement InterSTELLAR with scripts
 - Activate the InterSTELLAR environment.
   ```
