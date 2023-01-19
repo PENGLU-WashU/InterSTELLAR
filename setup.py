@@ -11,7 +11,7 @@ setup(name='InterSTELLAR',
           "scikit-learn",
           "torch",
           "torch_geometric",
-          ""
+          "future"
         ]
       )
 
