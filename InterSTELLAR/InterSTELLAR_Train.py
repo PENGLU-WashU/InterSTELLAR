@@ -72,10 +72,12 @@ def train(datasets, in_channels, out_channels, epoch_num = 200, n_classes = 3, l
         
         scheduler.step()
         if val_loss_min > val_loss:
+            val_loss_min = val_loss
             if results_dir:
-                val_loss_min = val_loss
-                torch.save(model.state_dict(), os.path.join(results_dir, 'saved_model.pt'))
-                print('save model')
+                torch.save(model.state_dict(), os.path.join(results_dir))
+            else:
+                torch.save(model.state_dict(), os.path.join('saved_model.pt'))
+            print('save model')
     print('Training completed!')
     return model
 
