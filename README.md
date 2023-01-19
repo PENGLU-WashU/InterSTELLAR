@@ -38,21 +38,21 @@ InterSTELLAR
 ### Our InterSTELLAR environment
 - Windows 10 64bit
 - Python 3.7
-- PyTorch 1.10.2
-- PyTorch-Geometric 2.0.4
+- PyTorch 1.12.1
+- PyTorch-Geometric 2.2.0
 - NVIDIA GPU + CUDA
 - Note that Linux also works with such configurations
 
 ### Installation
-- Create a virtual environment and install PyTorch and PyTorch_Geometric (we run all the codes in a Anaconda Powershell Prompt).
+- Create a virtual environment and install PyTorch and PyTorch_Geometric (we run all the codes in a Anaconda Powershell Prompt):
 ```
 $ conda create -n 'InterSTELLAR' python=3.7
 $ conda activate InterSTELLAR (some systems recommend: source activate IMC_Denoise)
-$ conda install PyTorch -c PyTorch
 ```
+- Install the PyTorch package (version 1.12.1) from https://pytorch.org/get-started/previous-versions
 - Install the PyTorch-Geometric package from https://github.com/pyg-team/pytorch_geometric#installation
 - Download and install the topk package from https://github.com/oval-group/smooth-topk
-- Download the source code and install the package in your folder.
+- Download the source code and install the package in your folder:
 ```
 $ git clone https://github.com/PENGLU-WashU/InterSTELLAR.git
 $ cd InterSTELLAR
