@@ -48,6 +48,7 @@ def prepare_constructed_graphs(raw_graph_data):
         cur_edge_attr = raw_graph_data[m][2]
         cur_labels = raw_graph_data[m][3]
         
+        single_graph = []
         single_graph.append(torch.tensor(cur_features, dtype = torch.float))
         single_graph.append(torch.tensor(cur_edge_index, dtype=torch.long).contiguous())
         single_graph.append(torch.tensor(cur_edge_attr, dtype=torch.float))
