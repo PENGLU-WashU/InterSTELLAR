@@ -109,3 +109,19 @@ Peng Lu - [@penglu10](https://twitter.com/penglu10) - penglu@wustl.edu
 <br/>Lab Website: [Thorek Lab WashU](https://sites.wustl.edu/thoreklab/)
 
 ## References
+
+If you find our work useful in your research or if you use parts of this code please consider citing our [paper](https://www.biorxiv.org/content/early/2023/03/28/2023.03.26.534306):
+
+Lu P, Oetjen K, Oh S and Thorek D. Interpretable spatial cell learning enhances the characterization of patient tissue microenvironments with highly multiplexed imaging data. bioRxiv, 2023. https://www.biorxiv.org/content/early/2023/03/28/2023.03.26.534306
+
+```
+@article {Lu2023.03.26.534306,
+	author = {Lu, Peng and Oetjen, Karolyn and Oh, Stephen and Thorek, Daniel LJ},
+	title = {Interpretable spatial cell learning enhances the characterization of patient tissue microenvironments with highly multiplexed imaging data},
+	elocation-id = {2023.03.26.534306},
+	year = {2023},
+	doi = {10.1101/2023.03.26.534306},
+	publisher = {Cold Spring Harbor Laboratory},
+	journal = {bioRxiv}
+}
+```
