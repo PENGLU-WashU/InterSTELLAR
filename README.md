@@ -115,13 +115,12 @@ If you find our work useful in your research or if you use parts of this code pl
 Lu P, Oetjen K, Oh S and Thorek D. Interpretable spatial cell learning enhances the characterization of patient tissue microenvironments with highly multiplexed imaging data. bioRxiv, 2023. https://www.biorxiv.org/content/early/2023/03/28/2023.03.26.534306
 
 ```
-@article {Lu2023.03.26.534306,
-	author = {Lu, Peng and Oetjen, Karolyn and Oh, Stephen and Thorek, Daniel LJ},
-	title = {Interpretable spatial cell learning enhances the characterization of patient tissue microenvironments with highly multiplexed imaging data},
-	elocation-id = {2023.03.26.534306},
-	year = {2023},
-	doi = {10.1101/2023.03.26.534306},
-	publisher = {Cold Spring Harbor Laboratory},
-	journal = {bioRxiv}
+@article{lu2023interpretable,
+  title={Interpretable spatial cell learning enhances the characterization of patient tissue microenvironments with highly multiplexed imaging data},
+  author={Lu, Peng and Oetjen, Karolyn and Oh, Stephen and Thorek, Daniel LJ},
+  journal={bioRxiv},
+  pages={2023--03},
+  year={2023},
+  publisher={Cold Spring Harbor Laboratory}
 }
 ```
