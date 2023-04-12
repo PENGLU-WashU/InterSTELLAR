@@ -35,7 +35,7 @@ InterSTELLAR
 ```
 
 ## Customize environment for InterSTELLAR
-### Our InterSTELLAR environment
+### Suggested InterSTELLAR environment
 - Windows 10 64bit
 - Python 3.7
 - PyTorch 1.12.1
